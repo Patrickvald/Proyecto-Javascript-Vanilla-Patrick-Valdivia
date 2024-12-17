@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questions</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Add a new question</h2>
+        <label>Question:</label><br>
+        <input type="text" id="question" oninput="enableButtonToSaveQuestion()"><br><br>
+    
+        <label>Answer:</label><br>
+        <input type="radio" id="true" name="answer" value="true" onclick="enableButtonToSaveQuestion()"> True
+        <input type="radio" id="false" name="answer" value="false" onclick="enableButtonToSaveQuestion()"> False<br><br>
+    
+        <label>Score (0-9):</label><br>
+        <input type="text" id="score" maxlength="1" oninput="enableButtonToSaveQuestion()"><br><br>
+    
+        <button id="save" onclick="saveQuestion()" disabled>Save</button>
+        <button onclick="window.location.href='main.html'">Back</button>
+    </div>
+    
+    <div class="list">
+        <h2>List of questions</h2>
+        <div id="loading">Loading questions...</div>
+        <table id="questionsTable" style="display:none;">
+            <thead>
+                <tr>
+                    <th>Question</th>
+                    <th>Answer</th>
+                    <th>Score</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody id="questionsList">
+            </tbody>
+        </table>
+    </div>
+    
+    <script src="utils.js"></script>
+</body>
+</html>
